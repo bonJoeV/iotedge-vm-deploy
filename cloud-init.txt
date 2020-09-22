@@ -33,6 +33,7 @@ packages:
   - build-essential
 
 runcmd:
+  - echo "here " $dcs
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
   - sudo apt install -y docker-ce
@@ -43,7 +44,8 @@ runcmd:
   - apt install -y nvidia-docker2
   - pkill -SIGHUP dockerd
   - wget http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run
-  - sh cuda_10.2.89_440.33.01_linux.run --silent --driver --toolkit --samples   
+  - sh cuda_10.2.89_440.33.01_linux.run --silent --driver --toolkit --samples
+  - echo "here" $dcs
   - |
     set -x
     (
