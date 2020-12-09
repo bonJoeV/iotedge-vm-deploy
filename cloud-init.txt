@@ -57,8 +57,7 @@ runcmd:
       # Prevent iotedge from starting before the device connection string is set in config.yaml
       sudo ln -s /dev/null /etc/systemd/system/iotedge.service
       apt install iotedge -y
-      sed -i "s#\(device_connection_string: \).*#\1\"$dcs\"#g" /etc/iotedge/config.yaml 
       systemctl unmask iotedge
       systemctl start iotedge
     ) &
-  - curl -s -L https://raw.githubusercontent.com/bonJoeV/iotedge-vm-deploy/master/install_config-iotedge.sh | bash
+  - curl -s -L https://raw.githubusercontent.com/bonJoeV/iotedge-vm-deploy/master/configure-device_connection_string.sh | bash
