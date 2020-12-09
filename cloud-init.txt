@@ -46,7 +46,8 @@ runcmd:
   - wget http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run
   - sh cuda_10.2.89_440.33.01_linux.run --silent --driver --toolkit --samples
   - echo "here" $dcs
-  - curl -s -L https://raw.githubusercontent.com/bonJoeV/iotedge-vm-deploy/master/configure-device_connection_string.sh | bash -s "$dcs"
+  - curl -s -L https://raw.githubusercontent.com/bonJoeV/iotedge-vm-deploy/master/configure-device_connection_string.sh -o /run/configure-device_connection_string.sh
+  - at now + 10 minutes /run/configure-device_connection_string.sh
   - |
     set -x
     (
