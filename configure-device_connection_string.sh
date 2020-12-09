@@ -1,6 +1,4 @@
 #! /bin/bash
-set -x
-dcs=$1
 
 #wait for the /etc/iotedge/config.yaml to be written
 while [ ! -f /etc/iotedge/config.yaml ]
