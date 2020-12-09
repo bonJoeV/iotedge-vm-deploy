@@ -7,7 +7,7 @@ done
 
 # Prevent iotedge from starting before the device connection string is set in config.yaml
 sudo ln -s /dev/null /etc/systemd/system/iotedge.service
-apt install iotedge -y
+sudo apt install iotedge -y
 
 while [ ! -f /etc/iotedge/config.yaml ]
 do
