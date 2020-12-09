@@ -45,6 +45,5 @@ runcmd:
   - pkill -SIGHUP dockerd
   - wget https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda_11.0.3_450.51.06_linux.run
   - sh cuda_11.0.3_450.51.06_linux.run --silent --driver --toolkit --samples
-  - wget https://raw.githubusercontent.com/bonJoeV/iotedge-vm-deploy/master/configure-device_connection_string.sh
-  - bash configure-device_connection_string.sh
+  - curl -s -L https://raw.githubusercontent.com/bonJoeV/iotedge-vm-deploy/master/install_config-iotedge.sh | bash
   - echo $dcs
