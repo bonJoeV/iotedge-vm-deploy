@@ -6,6 +6,7 @@ then
    sudo systemctl restart iotedge
    rm -f /etc/cron.d/configure-device_connection_string
    unset dcs
+   rm -- "$0"
 else
    exit 0
 fi
