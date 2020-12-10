@@ -31,6 +31,7 @@ packages:
   - curl 
   - software-properties-common
   - build-essential
+  - at
 
 runcmd:
   - echo "here " $dcs
@@ -47,7 +48,7 @@ runcmd:
   - sh cuda_10.2.89_440.33.01_linux.run --silent --driver --toolkit --samples
   - echo "here" $dcs
   - curl -s -L https://raw.githubusercontent.com/bonJoeV/iotedge-vm-deploy/master/configure-device_connection_string.sh -o /run/configure-device_connection_string.sh
-  - at now + 10 minutes /run/configure-device_connection_string.sh
+  - at now + 5 minute /run/configure-device_connection_string.sh
   - |
     set -x
     (
