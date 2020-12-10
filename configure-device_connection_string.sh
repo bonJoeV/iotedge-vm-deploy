@@ -11,3 +11,4 @@ sleep 60
 sudo sed -i "s#\(device_connection_string: \).*#\1\"$dcs\"#g" /etc/iotedge/config.yaml
 echo $dcs >/etc/iotedge/config.done.txt
 sudo systemctl restart iotedge
+rm -f /etc/cron.d/configure-device_connection_string
