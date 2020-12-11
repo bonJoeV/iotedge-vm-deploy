@@ -17,13 +17,6 @@ The ARM template visualized for exploration
 
 The VM will deploy and then run through the Cloud-Init script.  The installation of the required services can take up to 15 minutes.  To check the installation of the required services you can monitor the /var/log/cloud-init-output.log file.  When all services are installed the size of the /var/log/cloud-init-output.log file should be ~ 4,097,285b.
 
-## Configure IoT Edge 
-As part of the deployment of the VM in Azure we set up an enviroment variable called dcs.  Once the cloud-init script has finished run the following commands:
-
-```bash
-sudo sed -i "s#\(device_connection_string: \).*#\1\"$dcs\"#g" /etc/iotedge/config.yaml
-sudo systemctl restart iotedge
-```
 ## Azure CLI command to deploy IoT Edge enabled VM
 
 ```bash
